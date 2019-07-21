@@ -1,0 +1,29 @@
+#addButton{
+	vertical-align: middle;
+	font-size: larger;
+	border: 0px;
+	background-color: lightpink;
+	margin-left: 5px;
+	border-radius: 5px;
+}
+
+#valueInput {
+	vertical-align: middle;
+	width: 420px;
+	height: 17px;
+}
+
+.oddItem{
+	line-height: 30px;
+	vertical-align: middle;
+	width: 480px;
+	height: 30px;
+}
+
+.evenItem{
+	line-height: 30px;
+	background-color: lightsalmon;
+	width: 480px;
+	height: 30px;
+}
+

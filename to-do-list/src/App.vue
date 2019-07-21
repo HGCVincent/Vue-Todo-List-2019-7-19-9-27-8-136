@@ -2,11 +2,12 @@
   <div id="app">
    <h1>Jquery To Do List</h1>
 	 <h3>Simple Todo List with adding and filter by diff status</h3>
-	 <input v-model="inputValue"/>
-	 <button @click="handleSubmit">Add</button>
+	 <input id="valueInput" v-model="inputValue"/>
+	 <button id="addButton" @click="handleSubmit">Add</button>
 	 <ol>
 			<todo-item v-for= "(item,index) of list"
-			:content="item"
+			:content = "item"
+			:index = "index"
 			></todo-item>
 	 </ol>
 	</div>
@@ -35,6 +36,6 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped="scoped">
+	@import url("style/to-do-list.css");
 </style>
