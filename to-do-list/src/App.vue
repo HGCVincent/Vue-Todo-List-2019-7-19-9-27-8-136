@@ -6,8 +6,9 @@
 	 <button id="addButton" @click="handleSubmit">Add</button>
 	 <ol>
 			<todo-item v-for= "(item,index) of list"
-			:content = "item"
+			:item = "item"
 			:index = "index"
+			@complete = "hadleComplete"
 			></todo-item>
 	 </ol>
 	</div>
@@ -29,8 +30,11 @@ export default {
 	},
 	methods:{
 		handleSubmit() {
-			this.list.push(this.inputValue),
+			this.list.push({content:this.inputValue , status:true}),
 			this.inputValue = ''
+		},
+		hadleComplete (index) {
+			this.$set(list[index],state,false)
 		}
 	}
 }
