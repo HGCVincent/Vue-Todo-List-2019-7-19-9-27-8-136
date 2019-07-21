@@ -1,10 +1,14 @@
 <template>
 	<div v-bind:class="{evenItem:index % 2 !== 0 , oddItem:index % 2 ===0}">
-		<li v-if="item.status"><input type="checkbox" @click="isSelect($event)" name="items" v-bind:value="content"/>
-			{{item.content}}{{item.status}}
+		<li v-if="item.status">
+			<input type="checkbox" @click="isSelect($event)" name="items" 
+							v-bind:value="content" :checked="!item.status"/>
+			{{item.content}}
 		</li>
-		<li v-else><input type="checkbox" @click="isSelect($event)" name="items" v-bind:value="content"/>
-			<s>{{item.content}}{{item.status}}</s>
+		<li v-else>
+			<input type="checkbox" @click="isSelect($event)" name="items" 
+							v-bind:value="content" :checked="!item.status"/>
+			<s>{{item.content}}</s>
 		</li>
 	</div>
 </template>
@@ -15,10 +19,10 @@ export default {
 	methods:{
 		isSelect(e){
 			if(e.target.checked){
-				this.item.status = false
+				this.item.status = false;
 			}
 			else{
-				this.item.status = true
+				this.item.status = true;
 			}
 		}
 	}
