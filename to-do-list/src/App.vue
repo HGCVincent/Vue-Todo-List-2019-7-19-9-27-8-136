@@ -1,35 +1,18 @@
 <template>
-	<div id="app">
-		<tittleAndInput></tittleAndInput>
-		<div>
-			<ol>
-				<todo-item v-for="(item,index) of list" :item="item" :index="index"></todo-item>
-			</ol>
-		</div>
-		<filter-button></filter-button>
+	<div>
+		<router-view/>
 	</div>
+
 </template>
 
 <script>
-	import ToDoItem from './components/ToDoItem.vue'
-	import FilterButtons from './components/FilterButtons'
-	import TittleAndInput from './components/TittleAndInput'
+    import TodoList from './components/TodoList'
 
 	export default {
-		name: 'app',
+		name: 'welcome',
 		components: {
-		    'tittleAndInput':TittleAndInput,
-            'filterButton':FilterButtons,
-			'todo-item': ToDoItem
+			'todoList':TodoList
 		},
-		computed: {
-		    list(){
-		        return this.$store.state.list;
-			}
-		},
-        beforeCreate() {
-            this.$store.dispatch("getTodos");
-        }
 	}
 </script>
 

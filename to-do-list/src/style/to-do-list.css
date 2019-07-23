@@ -65,4 +65,11 @@
 	margin-right:  0px;
 }
 
-
+#welcome{
+	padding: 20px;
+	width: 500px;
+	margin: 0 auto;
+	margin-top: 0px;
+	margin-top: 40px;
+	background: white;
+}
