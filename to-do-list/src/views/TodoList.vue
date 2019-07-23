@@ -13,9 +13,9 @@
 </template>
 
 <script>
-    import ToDoItem from './ToDoItem.vue'
-    import FilterButtons from './FilterButtons'
-    import TittleAndInput from './TittleAndInput'
+    import ToDoItem from '../components/ToDoItem.vue'
+    import FilterButtons from '../components/FilterButtons'
+    import TittleAndInput from '../components/TittleAndInput'
 
     export default {
         name: 'app',
