@@ -3,10 +3,12 @@
 		<li v-if="item.status">
 			<input type="checkbox" @click="isSelect($event)" name="items" v-bind:value="item.content" :checked="!item.status" />
 			{{item.content}}
+			<button class="deleteBtn" @click="deleteTodo(item.id)">x</button>
 		</li>
 		<li v-else>
 			<input type="checkbox" @click="isSelect($event)" name="items" v-bind:value="item.content" :checked="!item.status" />
 			<s>{{item.content}}</s>
+			<button class="deleteBtn" @click="deleteTodo(item.id)">x</button>
 		</li>
 	</div>
 </template>
@@ -21,6 +23,9 @@
 				} else {
 					this.item.status = true;
 				}
+			},
+			deleteTodo(id){
+			    this.$store.dispatch('deleteTodo',id);
 			}
 		}
 	}

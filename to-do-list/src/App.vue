@@ -26,8 +26,10 @@
 		    list(){
 		        return this.$store.state.list;
 			}
-
 		},
+        beforeCreate() {
+            this.$store.dispatch("getTodos");
+        }
 	}
 </script>
 

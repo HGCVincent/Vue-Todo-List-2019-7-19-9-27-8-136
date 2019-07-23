@@ -1,8 +1,8 @@
 <template>
 	<div id="foot">
-		<button v-bind:class="{filterButtonActive:btnStatus === 1 , filterButtonDisable : btnStatus !== 1}" @click="showAll">ALL</button>
-		<button v-bind:class="{filterButtonActive:btnStatus === 2 , filterButtonDisable : btnStatus !== 2}" @click="showComplete">complete</button>
-		<button v-bind:class="{filterButtonActive:btnStatus === 3 , filterButtonDisable : btnStatus !== 3}" @click="showActive">Action</button>
+		<button v-bind:class="{filterButtonActive:btnStatus === 'All' , filterButtonDisable : btnStatus !== 'All'}" @click="showAll">ALL</button>
+		<button v-bind:class="{filterButtonActive:btnStatus === 'Complete' , filterButtonDisable : btnStatus !== 'Compelete'}" @click="showComplete">complete</button>
+		<button v-bind:class="{filterButtonActive:btnStatus === 'Active' , filterButtonDisable : btnStatus !== 'Active'}" @click="showActive">Action</button>
 	</div>
 </template>
 
@@ -11,21 +11,21 @@
 	    name: 'foot',
 		data(){
 	        return {
-                btnStatus: 1,
+                btnStatus: '',
 			}
 		},
 		methods:{
             showAll() {
             	this.$store.commit('showAll');
-            	this.btnStatus = 1;
+            	this.btnStatus = 'All';
             },
             showComplete() {
                 this.$store.commit('showComplete');
-            	this.btnStatus = 2;
+            	this.btnStatus = 'Complete';
             },
             showActive() {
                 this.$store.commit('showActive');
-            	this.btnStatus = 3;
+            	this.btnStatus = 'Active';
             }
 		}
 	}

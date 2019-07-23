@@ -18,12 +18,11 @@
         methods: {
             handleSubmit() {
                 if (this.inputValue !== '') {
-                    this.$store.state.list.push({
+                    this.$store.dispatch("addTodo",{
                         content: this.inputValue,
                         status: true
                     });
                     this.inputValue = '';
-                    this.$store.state.allItemList = this.$store.state.list;
                 } else {
                     alert("不能输入空值");
                 }

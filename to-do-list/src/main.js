@@ -1,27 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Vuex from 'vuex'
+import Axios from 'axios'
+import VueAxios from 'vue-axios'
+import store from './store'
 
 Vue.config.productionTip = false
 
 Vue.use(Vuex)
-const store = new Vuex.Store({
-    state:{
-        list: [],
-        allItemList: [],
-    },
-    mutations:{
-        showAll(state){
-            state.list = state.allItemList;
-        },
-        showComplete(state){
-            state.list = state.allItemList.filter(item => item.status === false);
-        },
-        showActive(state){
-            state.list = state.allItemList.filter(item => item.status === true);
-        }
-    }
-})
+Vue.use(VueAxios,Axios)
+
 new Vue({
     store,
   render: h => h(App),

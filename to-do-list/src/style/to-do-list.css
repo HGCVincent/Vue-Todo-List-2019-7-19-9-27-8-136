@@ -1,5 +1,12 @@
 #app{
+	padding: 20px;
 	width: 500px;
+	margin: 0 auto;
+	margin-top: 0px;
+	margin-top: 40px;
+	background: white;
+	border-radius: 5px;
+	/*width: 500px;*/
 }
 #foot{
 	margin-top: 50px;
@@ -49,6 +56,13 @@
 	font-size: larger;
 	color: #FFA07A;
 	background-color: white;
+}
+
+.deleteBtn{
+	color: red;
+	border: 0px;
+	background-color: white;
+	margin-right:  0px;
 }
 
 
