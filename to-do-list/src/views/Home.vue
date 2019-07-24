@@ -3,7 +3,12 @@
         <button @click="back">返回</button>
         <p>{{ userName }}</p>
         <ul>
-            <li><a href="javaScript:void" @click="enterTodoList">TodoList</a></li>
+            <li>
+                <a href="javaScript:void(0)" @click="enterTodoList">TodoList</a>
+            </li>
+            <li>
+                <a href="javaScript:void(0)" @click="enterMyprofile">Myprofile</a>
+            </li>
         </ul>
         <router-view></router-view>
     </div>
@@ -19,10 +24,17 @@
         },
         methods:{
             back(){
-                this.$router.push('/')
+                let se = confirm("你确定返回欢迎界面吗？");
+                if (se) {
+                    this.$router.push('/');
+                }
             },
             enterTodoList(){
-                this.$router.push('/todoList')
+                this.$router.push(`/Home/${this.userName}`);
+            },
+            enterMyprofile(){
+                this.$router.push(`/Home/${this.userName}/myprofile`);
+                console.log(this);
             }
         },
         beforeMount () {

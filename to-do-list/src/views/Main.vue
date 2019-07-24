@@ -15,7 +15,12 @@
         },
         methods:{
             toPageHome(){
-                this.$router.push({path:`/Home/${this.userName}`})
+                if (this.userName !== '') {
+                    this.$router.push({path: `/Home/${this.userName}`});
+                }
+                else {
+                    alert("请输入您的姓名");
+                }
             }
         }
     }

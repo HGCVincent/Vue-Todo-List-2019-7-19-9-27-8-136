@@ -21,8 +21,8 @@ const actions = {
             dispatch('getTodos');
         }).catch(error => console.log(error))
     },
-    putTodo({dispatch},item){
-        axios.put(baseUrl,item).then(() => {
+    updateTodo({dispatch},id,content){
+        axios.patch(baseUrl,id,content).then(() => {
             dispatch('getTodos');
         }).catch(error => console.log(error))
     }

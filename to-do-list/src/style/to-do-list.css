@@ -73,3 +73,7 @@
 	margin-top: 40px;
 	background: white;
 }
+
+.compeleteItem{
+	text-decoration: line-through;
+}

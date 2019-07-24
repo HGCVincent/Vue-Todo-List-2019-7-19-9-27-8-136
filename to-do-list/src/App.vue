@@ -6,13 +6,9 @@
 </template>
 
 <script>
-    import TodoList from './views/TodoList'
 
 	export default {
 		name: 'welcome',
-		components: {
-			'todoList':TodoList
-		},
 	}
 </script>
 
