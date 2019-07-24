@@ -4,13 +4,14 @@
 			<input type="checkbox" @click="isSelect($event)" name="items" v-bind:value="item.content" :checked="!item.status" />
 			<span @dblclick="dblHandle" v-if="!item.editable">{{item.content}}</span>
 			<input v-else v-model="item.content" @blur="blurHandle(item.id,item.content)"/>
-			<a-button :class="{deleteButton : true}" type="danger" :size="size" @click="deleteTodo(item.id)">Delete</a-button>
-			<!--<button class="deleteBtn" @click="deleteTodo(item.id)">x</button>-->
+			<a-button class="deleteButton" type="danger" :size="size" @click="deleteTodo(item.id)">Delete</a-button>
 		</li>
 	</div>
 </template>
 
 <script>
+	import mutationsType from '../store/mutationType'
+
 	export default {
 		props: ['item', 'index'],
 		methods: {
@@ -20,6 +21,7 @@
 				} else {
 					this.item.status = true;
 				}
+                this.$store.dispatch('updateTodo',this.item);
 			},
 			deleteTodo(id){
 			    this.$store.dispatch('deleteTodo',id);
@@ -29,7 +31,7 @@
 			},
             blurHandle(id,content){
 			    this.item.editable = false;
-			    this.$store.dispatch('updateTodo',id,content);
+			    this.$store.dispatch('updateTodo',this.item);
 			}
 		}
 	}
