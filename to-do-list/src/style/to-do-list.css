@@ -1,6 +1,6 @@
 #app{
 	padding: 20px;
-	width: 500px;
+	width: 520px;
 	margin: 0 auto;
 	margin-top: 0px;
 	margin-top: 40px;
@@ -29,17 +29,18 @@
 }
 
 .oddItem{
-	line-height: 30px;
+	line-height: 45px;
 	vertical-align: middle;
 	width: 100%;
-	height: 30px;
+	height: 45px;
 }
 
 .evenItem{
-	line-height: 30px;
+	line-height: 45px;
 	background-color: lightsalmon;
+	vertical-align: middle;
 	width: 100%;
-	height: 30px;
+	height: 45px;
 }
 
 .filterButtonActive{

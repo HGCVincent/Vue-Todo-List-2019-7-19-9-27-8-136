@@ -4,7 +4,8 @@
 			<input type="checkbox" @click="isSelect($event)" name="items" v-bind:value="item.content" :checked="!item.status" />
 			<span @dblclick="dblHandle" v-if="!item.editable">{{item.content}}</span>
 			<input v-else v-model="item.content" @blur="blurHandle(item.id,item.content)"/>
-			<button class="deleteBtn" @click="deleteTodo(item.id)">x</button>
+			<a-button :class="{deleteButton : true}" type="danger" :size="size" @click="deleteTodo(item.id)">Delete</a-button>
+			<!--<button class="deleteBtn" @click="deleteTodo(item.id)">x</button>-->
 		</li>
 	</div>
 </template>
@@ -37,4 +38,9 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 	@import url("../style/to-do-list.css");
+	.deleteButton{
+		float: right;
+		margin-top: 5px;
+		margin-right: 5px;
+	}
 </style>
